@@ -1,3 +1,5 @@
+import easy_str
+
 print("1: *")
 print("2: **")
 print("3: ***")
@@ -19,10 +21,10 @@ for i in range(numberOfLoops):
 myStars = ''
 numberOfLoops = 0
 for i in range(numberOfLoops):
-    if i <= numberOfLoops / 2:
+    if i <= numberOfLoops / 3:
         myStars = myStars + '*'
     else:
-        myStars = myStars[0:len(myStars) - 1]
+        myStars = easy_str.remove_last(myStars)
     line = str(i) + ": " + myStars
     print(line)
 
@@ -34,7 +36,7 @@ for i in range(numberOfLoops):
         invert = not invert
 
     if invert:
-        myStars = myStars[0:len(myStars) - 1]
+        myStars = easy_str.remove_last(myStars)
     else:
         myStars = myStars + '*'
 
